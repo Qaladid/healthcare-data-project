@@ -8,13 +8,13 @@ terraform {
 }
 
 provider "google" {
-  project = "healthcareanalytics-431704"
-  region  = "us-central"
+  project = var.project
+  region  = var.region
 }
 
 resource "google_storage_bucket" "demo-bucket" {
-  name          = "healthcareanalytics-431704-terr-bucket"
-  location      = "US"
+  name          = var.gcs_bucket_name
+  location      = var.location
   force_destroy = true
 
   lifecycle_rule {
@@ -27,6 +27,25 @@ resource "google_storage_bucket" "demo-bucket" {
   }
 }
 
-resource "google_bigquery_dataset" "demo_dataset" {
-  dataset_id = "healthcare_dataset "
+resource "google_bigquery_dataset" "healthcare_dataset" {
+  dataset_id = var.health_care_dataset_name
+  location   = var.location
+}
+
+resource "google_project_iam_member" "bq_data_editor" {
+  project = var.project
+  role    = "roles/bigquery.dataEditor"
+  member  = "serviceAccount:${var.service_account_email}"
+}
+ 
+resource "google_project_iam_member" "bq_data_viewer" {
+  project = var.project
+  role    = "roles/bigquery.dataViewer"
+  member  = "serviceAccount:${var.service_account_email}"
+}
+
+resource "google_project_iam_member" "storage_admin" {
+  project = var.project
+  role    = "roles/storage.admin"
+  member  = "serviceAccount:${var.service_account_email}"
 }
