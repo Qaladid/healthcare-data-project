@@ -1,0 +1,3 @@
+[submodule "mage_healthcare_project"]
+	path = mage_healthcare_project
+	url = https://github.com/Qaladid/healthcare-data-project.git
