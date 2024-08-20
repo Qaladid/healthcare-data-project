@@ -66,6 +66,7 @@ Create a `.env` file in the root directory with the following content:
 
 ## Project Workflow Diagram
  Below is the workflow diagram that illustrates the data pipeline:
+ 
  ![Workflow Diagram](images/Healthcare_workflow.png)
 
 ## Dashboard
