@@ -9,6 +9,7 @@ This project involves building a data pipeline for healthcare data using various
 - **`healthcare-data-project/`**: Root directory containing the entire project.
 - **`mage_healthcare_project/`**: Contains ETL scripts and Mage AI configuration.
 - **`data_loaders/`**: Scripts for loading data.
+- **`data_exporters/`**: Scripts for exporting data.
 - **`transformers/`**: Scripts for data transformations.
 - **`pipelines/`**: Defines ETL pipelines.
 - **`utils/`**: Utility functions and helper scripts.
@@ -71,5 +72,6 @@ Create a `.env` file in the root directory with the following content:
 
 ## Dashboard
  Here is the final dashboard showing the visualizations:
- <!-- ![Dashboard](images/dashboard.png) -->
+ 
+ ![Dashboard](images/healthcare_dashboard.png)
 
