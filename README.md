@@ -48,7 +48,7 @@ Create a `.env` file in the root directory with the following content:
 6. **Verify Data in BigQuery**
 
  - Ensure the data is correctly loaded and transformed by checking your Google BigQuery instance.
- - You can check the ERD i provided in the images directory to get a high level understanding of how data are related through dimensions and fact tables.
+ - Check ERD i provided in the images folder `Healthcare_Data_Model.png` to get a high level understanding of how data are related through  dimensions and fact table
 
 7. **Access Looker Studio**
 
