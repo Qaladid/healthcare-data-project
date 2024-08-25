@@ -41,37 +41,54 @@ Create a `.env` file in the root directory with the following content:
   **`docker-compose up`**
  - This will start PostgreSQL and Mage AI containers.
 
-5. **Run ETL Pipelines**
+4. **Run ETL Pipelines**
 
- - Access the Mage AI interface at http://localhost:6789 and trigger the ETL pipelines as needed.
+- Access the Mage AI interface at http://localhost:6789 and trigger the ETL pipelines as needed.
+
+5. **Provision BigQuery Using Terraform**
+
+ - Navigate to the terraform/ directory.
+ - Initialize Terraform: 
+     `terraform init`
+ - Apply the Terraform configuration to provision BigQuery resources:
+     `terraform apply`
+ - To destroy the resources when no longer needed:
+     `terraform destroy`
 
 6. **Verify Data in BigQuery**
 
  - Ensure the data is correctly loaded and transformed by checking your Google BigQuery instance.
- - Check ERD diagram i provided in the images folder `Healthcare_Data_Model.png` to get a high level understanding of how data are related through  dimensions and fact table
+ 
+7. **Check ERD Diagram**
 
-7. **Access Looker Studio**
+ - Refer to the `Healthcare_Data_Model.png` in the `images` folder for a high-level understanding of how data is related through dimensions and fact  tables.
+
+8. **Access Looker Studio**
 
  - Go to Looker Studio to view your dashboards and reports.
  - Ensure your data sources are connected correctly.
 
 **Tips for Navigating the Project**
+
  - ETL Scripts: Located in the mage_healthcare_project/ directory. Modify these scripts to update the data pipeline.
  - Docker Management: Use docker-compose commands to manage containers. For example, docker-compose down to stop containers and docker-compose up to     restart  -them.
  - BigQuery Data: Check tables and schemas directly in Google BigQuery for any data issues.
  - Looker Studio: Use Looker Studio to create and manage visualizations. Ensure data sources are correctly configured to reflect changes.
 
 **Troubleshooting**
+
  - Container Issues: If containers fail to start, check logs using docker-compose logs and ensure no port conflicts.
  - Data Access Problems: Verify network configurations and permissions for accessing BigQuery and Looker Studio.
  - Project Setup Errors: Double-check environment variables and dependency installations.
 
 ## Project Workflow Diagram
+
  Below is the workflow diagram that illustrates the data pipeline:
  
  ![Workflow Diagram](images/healthcare_workflow.png)
 
 ## Dashboard
+
  Here is the final dashboard showing the visualizations:
  
  ![Dashboard](images/healthcare_dashboard.png)
